@@ -1,11 +1,7 @@
 pkgs <- c('doParallel', 'foreach')
 lapply(pkgs, require, character.only = T)
-#Find out how many cores are available (if you don't already know)
 cores<-detectCores()
-#Create cluster with desired number of cores, leave one open for the machine         
-#core processes
 cl <- makeCluster(cores[1]-1)
-#Register cluster
 registerDoParallel(cl)
 set.seed(02252020)
 
